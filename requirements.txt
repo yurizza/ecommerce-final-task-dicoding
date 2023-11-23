@@ -5,3 +5,4 @@ streamlit
 Babel
 numpy
 streamlit_option_menu
+Pillow
