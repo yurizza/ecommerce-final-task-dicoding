@@ -12,6 +12,4 @@ pip install numpy pandas scipy matplotlib seaborn jupyter streamlit babel stream
 streamlit run dashboard.py
 ```
 ## Link Streamlit Cloud
-```
 [Ecommerce Analysis by Cici Yuriza](https://ecommerce-final-task-dicoding.streamlit.app/)
-```
