@@ -517,7 +517,9 @@ st.set_page_config(layout="wide", page_title="ecommerce analysis")
 st.markdown('<h1 style="text-align: center;">Ecommerce Analysis</h1>', unsafe_allow_html=True)
 
 ######################### Load cleaned data #############################
-all_df = pd.read_csv("main_data.csv")
+order_items_csv = pd.read_csv("order_items.csv")
+orders_csv = pd.read_csv("orders.csv")
+all_df = pd.merge(order_items_csv, orders_csv, how='left', on='order_id')
 
 datetime_columns = ["order_purchase_timestamp", "order_estimated_delivery_date"]
 all_df.sort_values(by="order_purchase_timestamp", inplace=True)
