@@ -415,10 +415,29 @@ def order_analysis():
     ax.tick_params(axis='x', labelsize=15)
 
     st.pyplot(fig)
-    
-    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(45, 8))
+
+    # Question 7 : Waktu orders
+
+    time_category_counts = all_df['purchase_time_category'].value_counts()
+    # Hitung jumlah pembelian untuk setiap hari
+    day_counts = all_df['purchase_day'].value_counts()
+
+    # Plot pie charts dalam subplots
+    fig, ax = plt.subplots(1, 2, figsize=(15, 4))
+    colors = ["#72BCD4", "#D3D3D3", "#D3D3D3", "#D3D3D3", "#D3D3D3","#D3D3D3", "#D3D3D3"]
+    colors2 = ["#72BCD4", "#D3D3D3", "#D3D3D3"]
+    # Pie chart untuk distribusi pembelian berdasarkan hari
+    ax[0].pie(day_counts, labels=day_counts.index, autopct='%1.1f%%', startangle=90, colors=colors)
+    ax[0].set_title('Distribution of Purchases by Day')
+
+    # Pie chart untuk distribusi pembelian berdasarkan kategori waktu
+    ax[1].pie(time_category_counts, labels=time_category_counts.index, autopct='%1.1f%%', startangle=90, colors=colors2)
+    ax[1].set_title('Distribution of Purchases by Time of Day')
+    st.pyplot(fig)
 
     # Question 3 : Order by city
+    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(45, 8))
+
     sns.lineplot(
         y="count_order",
         x="order_purchase_year",
