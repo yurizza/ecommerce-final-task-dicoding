@@ -13,5 +13,5 @@ streamlit run dashboard.py
 ```
 ## Link Streamlit Cloud
 ```
-https://ecommerce-final-task-dicoding.streamlit.app/
+[Ecommerce Analysis by Cici Yuriza](https://ecommerce-final-task-dicoding.streamlit.app/)
 ```
